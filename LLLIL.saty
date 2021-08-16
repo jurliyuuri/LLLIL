@@ -1,0 +1,309 @@
+@require: code
+@require: itemize
+@require: tabular
+@require: proof
+@require: class-exdesign/exdesign
+@require: easytable/easytable
+@require: uline/uline
+@import: LLLIL
+@import: article-lip
+
+open EasyTableAlias
+
+in
+
+ExDesign.document (|
+  title = {lecu lersse lineparine iurle ler};
+  author = {skarsna.meloviliju};
+  date = {};
+  show-title = true;
+  show-toc = true;
+  style = ArticleLip.a4paper;
+  design = ArticleLip.article;
+  header-footer = ArticleLip.normalHF;
+  fonts = ArticleLip.fonts;
+|) '<
+  +newpage;
+  +subsection{はじめに} <
+    +p {
+      リパライン語を学ぼうとするみなさんに向けて、従来の教科書の項目から基本的な
+      リパライン語を操るのに必要な最小限の文法事項を抽出したテキストを作りました。
+      シャリヤやエレーナたちの会話の中で用いられる表現に触れながら、リパライン語の魅力に親しんでいきましょう。
+    }
+  >
+  +subsection{いろいろなリパライン語} <
+    +p {
+      リパライン語は、リパラオネ人たちの間で用いられる言語です。更にファルトクノアや
+      デュイン地域をはじめとするさまざまな領域・世界に広まっている言語でもあり、
+      発音差や方言などが豊富に存在します。本書ではその中でも標準語とされている
+      フェーユ方言に基づいて学んでいきます。
+    }
+    +p {
+      また、現代リパライン語では、文語と口語という二つの文体が存在します。
+      口語はいわゆる話し言葉と言われるもので、格接辞の省略や単語の遣い方などが比較的自由であり、
+      少しくだけていると捉えられることもあります。それに対し文語は書き言葉といわれる、
+      公文書や新聞などに用いられ、口語に比べると省略や語順に制限があるなどの違いがあります。
+    }
+    +p {
+      本書では口語を基本としつつ、よく見られる文語表現や注意点を紹介することを目標とします。
+    }
+  >
+  +newpage;
+  +section{文字と読み方} <
+    +p {
+      \easytable ?:[t; b; v 3; v 6; v 9] [l; c; l; l; c; l; l; c; l; l; l;] {
+        | p | \textLatin{/p/}  |  ペー   | n | \textLatin{/n/} |  ネー   | i | \textLatin{/i/} | イー            | 1 | \textLatin{1}
+        | F | \textLatin{/ɸ/}  |  ふぇー | r | \textLatin{/:/} |  れー   | y | \textLatin{/y/} | シェノネン・ウー | 2 | \textLatin{2}
+        | f | \textLatin{/f/}  |  フェー | l | \textLatin{/l/} |  レー   | u | \textLatin{/u/} | ウー            | 3 | \textLatin{3}
+        | t | \textLatin{/t/}  |  テー   | j | \textLatin{/j/} |  イェー | o | \textLatin{/o/} | オー            | 4 | \textLatin{4}
+        | c | \textLatin{/s/}  |  セー   | w | \textLatin{/w/} |  ウェー | e | \textLatin{/e/} | エー            | 5 | \textLatin{5}
+        | x | \textLatin{/ʃ/}  |  シェー | b | \textLatin{/b/} |  メー   | a | \textLatin{/a/} | アー            | 6 | \textLatin{6}
+        | k | \textLatin{/k/}  |  ケー   | V | \textLatin{/β/} |  ゔぇー | , |                 | 読点            | 7 | \textLatin{7}
+        | q | \textLatin{/kw/} |  クェー | v | \textLatin{/v/} |  ヴェー | . |                 | 句点            | 8 | \textLatin{8}
+        | h | \textLatin{/h/}  |  ヘー   | d | \textLatin{/d/} |  デー   | ! |                 | 感嘆符          | 9 | \textLatin{9}
+        | R | \textLatin{/r/}  |  れー   | s | \textLatin{/z/} |  ゼー   | ? |                 | 疑問符          | 0 | \textLatin{0}
+        | z | \textLatin{/ts/} |  ツェー | g | \textLatin{/g/} |  ゲー   | ' |                 | アポストロフィ   |   |
+        | m | \textLatin{/m/}  |  メー   | X | \textLatin{/ʒ/} |  ジェー | \textLatin{´} |     | アポストロフィ   |   |
+      |}
+    }
+    +subsection{母音字} <
+      +p {
+        リパライン語には i, y, u, o, e, a の６つの母音字が存在します。\br;
+        \indent;i u o e a：対応するローマ字と同じように発音します。\br;
+        \indent;y：舌を下あご側の前歯の裏につけながら、口をすぼめて[ウ]と発音します。\br;
+      }
+    >
+    +subsection{子音字} <
+      +p {
+        ペアになっている子音\br;
+        \indent;無声子音: p F f t c k\br;
+        \indent;有声子音: b V v d s g
+      }
+      +p {ペアをつくらない子音\br;
+        \indent;無声子音: x h
+        \indent;有声子音: q R m n r l j w X
+      }
+      +p {
+        息だけでなく声も一緒にでる子音を有声子音と呼びます。発音しながらのどに触ると、声帯が震えているのがわかります。
+      }
+    >
+    +subsection{記号類} <
+      +p {
+        'および\textLatin{’}は音声上の区切りを示します。8や9で述べる規則などによる発音の変化が起こらないように、区切って読むことを明示します。
+      }
+    >
+    +subsection{注意が必要な文字} <
+      +p {
+        r と R は手書きされる際には区別されず同じ字で書かれることがあります。\br;
+        本書では、より普及している書式に従い二つを区別せずともに r で書くこととします。
+        \listing{
+          * f と F、および v と V は明確に区別されます。f、v が下唇を軽く噛んで発音する
+            (英語の \textLatin{f}、\textLatin{v} と同じ)のに対し、F と V は唇をかまずに唇の間から息を出すように発音されます。
+          * c はサ行の音を表します。
+          * s はザ行の音を表します。後ろに母音がない場合は c と同じ無声音になります。
+          * x はシャ行の音です。ロシア語の \textCyrillic{ш} のようにそり舌で発音しますが、
+            英語や日本語と同じように発音する場合もあります。X は x の有声音です。
+          * q は一文字でクヮという感じの音を表します。
+          * R は巻き舌のら行の音を表します。l と区別できるようにしましょう。
+          * z はツァ行の子音です。
+          * n はナ行の音ですが、母音字の後に来たときにも[ヌ]と発音します。日本語のように[ン]と読まないようにしましょう。
+          * r は R と異なり、単体での音をもたず、直前の母音を長く発音することを示します。
+          * j はヤ行の子音を表します。
+        }
+      }
+    >
+    +subsection{二重子音} <
+      +p {
+        古典リパライン語時代から引き継がれたり音韻的変遷を経たりして現代に残された、複数の子音で一つの音を表すいくつかの綴りが存在します。
+        \listing{
+          * ph は p か f のどちらかから、話者が好きな方を選択することができます。
+          * ts, sh は、それぞれ z, x に対応します。
+          * ng は、鼻音化した g を示します。「やかん」の[ン]と同じ音です。
+          * ch は、チャ行の音を表します。
+          * th は英語の\textLatin{th} と同じく舌を軽くかんで発音する無声音です。有声音が dh です。
+          * kh は、寒くてかじかんだ手を温めるように発音するハ行の音を表します。
+          * Rl は英語の r と同じように接近音で発音します。
+          * rl は、直前の子音を長く発音してから l と発音するか、Rl と同じように発音するかを話者が好きな方を選択できます。
+        }
+      }
+    >
+    +subsection{三重子音} <
+      +p {
+        Rkh は、ドイツ語やフランス語の r のようにのどを震わせるラ行の音です。
+      }
+    >
+    +subsection{強弱子音と軟子音} <
+      +p {
+        リパライン語の母音は強母音と弱母音の二つに分けられます。強母音は a, e, o の\textLatin{3}つで、弱子音は i, y, u の\textLatin{3}つです。また、軟子音というものも存在し、これは x, X, sh, ch の\textLatin{4}つを指します。
+        \listing{
+          * i の後に母音が来るとき、i は j の音になります。\br;
+          iulo [ユロ] 　 iavnav [ヤヴナヴ]
+          * y の後に母音が来た場合、y が口をすぼめた j の音になることがあります。\br;
+          etulyo [エトゥリュオ] 　 yuesleone [ユエスレオネ]
+          * u の後に母音が来た場合、u が w の音になることがあります。\br;
+          tuan [トゥアン] 　 luo [ルォ]
+          * j の前後共に母音が来ない場合は、i で発音されます。\br;
+          arteldarlj [アーテルダーリ] 　 zpenernj[ツペネーニ]
+          * 母音の後に i, u が来て、(間に'が入っても良い)その後に r が来ない場合は j, w に変わって発音する場合があります。ただし、iu, yu の u は w の音にはなりません。\br;
+          lajnef [ライネフ] 　 paltau [パルタウ]
+          * 軟子音のあとに i＋母音字が来ると i が発音されない場合があります。\br;
+          duxien [ドゥシェン] 　 pyshien [ピュシェン]
+          * 軟子音または j の後ろに来た y は u で発音されます。\br;
+          xyr [シュー] 　 ijyr [イユー]
+        }
+      }
+    >
+    +subsection{その他の発音規則} <
+      +p {
+        'とcxの綴りが文章の中に見られることは比較的多いため、これらに関する規則は重要といえます。
+        \listing{
+          * 'が弱母音の後ろにつくときは、その弱母音は半母音化せず分けて発音されます。\br;
+          Kertni'ar [ケートニアー] ～ kertniar [ケートニャー]\br;
+          fi'anxa [フィアンシャ] ～ fianxa [フャンシャ]
+          * sj の発音には、si と ci の２種類が認められています。ただし、直後に母音が来ないときは必ず si の発音となります。\br;
+          sjuelun [スュェルン/ズュェルン] 　 lursjR [ルーズィル]
+          * tz, sx, dX, tth, ddh は z, x, X, th, dh の促音で読みます。\br;
+          josxe [ヨッシェ] 　 anfeyatz [アンフェヤッツ]
+          * ただし、cx は xの促音ではありません。\br;
+          licxa [リスシャ] 　 -bacx [バスシュ]
+        }
+      }
+    >
+    +subsection{アクセント} <
+      +p {
+        リパライン語のアクセントは一般には英語と同じ強弱アクセントとされており、
+        \listing{
+          * 単語に音節が一つだけのとき: その母音
+          * 単語に音節が二つ以上あり長母音がないとき: 後ろから２つ目の母音
+          * 単語に長母音があるとき: 最初の長母音
+        }
+        にアクセントが置かれることとなっています。\br;
+        \indent;niv [\uline{ニ}ヴ] 　 cene [\uline{セ}ネ] 　 lineparine [リネ\uline{パー}イネ]
+      }
+    >
+    +subsection{イントネーション} <
+      +p {
+        特に強調する部分のない平叙文(疑問文や感嘆文でない「普通の」文)は、英語などと同様に平坦に読み、文末がやや下がります。疑問文では、文末が高くなって尻上がりになるように読まれます。\br;
+        \easytable?:[][c; cw 60pt; c;]{
+          | \intonationLine({mi es xa})({liya.})(`down`); | | \intonationLine({fqa'd marl es})({retla?})(`up`);
+          | mi es xalija.                                 | | fqa'd marl es retla?
+        |}
+      }
+    >
+    +subsection{その他} <
+      +p {
+        リパーシェには大文字小文字という概念がなく、文頭や固有名詞の語頭もすべて同じように書かれます
+        (ただしラテン字転写された状態では見やすさのために文頭などが大文字にされることがあります)。
+      }
+      +p {
+        リパライン語は、英語の \textLatin{SVO} のような固定した文型がなく、語順の自由度が比較的高いという特徴が見られます。
+        これを可能にしている仕組みは後に述べますが、今は「語順にいろんなパターンがある」ということを頭に入れて慣れることに専念してください。
+      }
+    >
+    +pQ {} {
+      1) mal, aj, fal, ler, pa, elx, xel, leX\br;
+      2) lyjot, diepoj, oniex, panqa, xace, sysnul\br;
+      3) larta, pernel, lirf, xarzni'ar, werlfurp, lkurf, yrgokk
+    }
+    +newpage;
+  >
+
+  +section{第\textLatin{1}課\ -1te laesnifo-} <
+    +frame<
+      +pn {
+      \indent; mi es xalija. Mi es lipalain.\br;
+      \indent;\dash; salarua!\br;
+      \indent;\dash; salarua, elernasti.\br;
+      \indent;ci es elerna. Ci es mena.\br;
+      \indent;\dash; xalijasti, co es vynut?\br;
+      \indent;\dash; ja, xace.\br;
+      }
+    >
+    +subsection{人称代名詞} <
+      +p {
+        人称の違いを表す代名詞です。一人称は話し手、二人称は聞き手、３人称は会話に
+        参加していない人やものを指します。４人称はリパライン語においては「全て」や「みんな」を表します。
+        物称は直称代名詞とも呼ばれ、直接指さしすることができるものや場所に使います。
+        文脈で使う「それ」や「あれ」は文脈指示を用います。\br;
+        \easytable?:[] [cw 160pt;]{|
+          \easytable?:[t; b;] [r; c;]{
+            | 一人称   | mi
+            | 二人称   | co, zi
+            | 三人称   | si, ci, ni
+            | 四人称   | als
+            | 物称     | fqa, fgir
+            | 文脈指示 | la lex, ny la lex
+          |}
+        |}
+
+        \listing{
+          * ２人称は、通常は co が用いられます。相手が話を聞いていないと思われる場合や、改まって相手に敬意を表す場合には zi を使います。
+          * ３人称の si, ci, ni はそれぞれ「彼」「彼女」「(性別を指定しない)その人」に対応します。
+          * 物称の fqa, fgir はそれぞれ「これ、それ」「あれ」に対応します。距離が近ければ fqa を、遠ければ fgir を使います。
+          * 文脈指示の la lex はリパライン語の主要な特徴の一つともいえる代名詞で、話し言葉書き言葉ともに非常によく用いられる表現です。
+          例えば「卵焼き作れる？」「ううん、あれ難しいよね」の「あれ」などは話の中に出てきたものなので fqa, fgir ではなく la lex で受けます。
+          * ny la lex は指す範囲がそれより前でなく後ろになったもので、たとえば「彼はこういった。進軍せよと」の「こう」などに用いられます。
+        }
+      }
+    >
+    +subsection{コピュラ動詞 es} <
+      +p {
+        コピュラ動詞というのは英語の \textLatin{be} 動詞にあたるもので、\textLatin{A} es \textLatin{B}.で「\textLatin{A} は \textLatin{B} である」という文を作ることができます。
+        \textLatin{B} には形容詞や名詞が入ることができます。\br;
+        \indent;co es xorlnem.　君は美しい。　si es vefisaiter.　彼はヴェフィス人だ。
+      }
+    >
+    +subsection{呼格} <
+      +p {
+        リパライン語で何かに呼びかけるときは、名詞を呼格に変えて呼びます。呼格は名詞の後ろに呼格語尾-sti をつけて作ります。\br;
+        \indent;xalija　シャリヤ(女性の名前) ～ xalijasti　シャリヤよ
+      }
+    >
+    +subsection{平叙疑問文} <
+      +p {
+        「はい」「いいえ」で答えられる質問を平叙疑問文といいます。質問に対して肯定するときは ja を、否定するときは niv を用います。\br;
+        \indent;fqa es cirla? \dash; niv, fqa es nisa.　これは本当か？\dash;いいえ、誤りです。
+      }
+    >
+    +subsection{挨拶表現} <
+      +p {
+        比較的頻繁に用いられる表現の例を以下に挙げます。
+        \listing{
+          * salarua.　こんにちは
+          * xace.　ありがとう
+          * nace.　ごめんなさい
+          * als es niv.　どういたしまして
+          * fasta la pesta.　また後で
+          * liqka'l tydiest.　おやすみなさい
+        }\br;
+        \indent;このうち、最もよく使われるのが salarua で、昼夜を問わず使えるほか出会った時にも別れる時にも使うことができます。
+        親しい間柄ではくだけた言い方であるsalar もよく用いられます。より丁寧にしたい場合は表現の後に lu を言うとよいでしょう。
+      }
+    >
+    +pW {
+      \easytable ?:[] [lw 200pt; lw 200pt] {
+        | xalija　シャリヤ(女性の名前) | lipalain　リパラオネ人
+        | elerna　エレーナ(女性の名前) | mena　友人
+        | vynut　良い、大丈夫だ        | xorlnem　美しい
+        | vefisaiter　ヴェフィス人     | cirla　真実
+        | nisa　嘘、誤り               | 
+      |}
+    }
+    +newpage;
+  >
+
+  +section{練習問題} <
+      +pQ {1}{
+      \indent;1. リパライン語に訳しましょう。\br;
+      1) 彼は学生だ。: (　　) es kestine'a.　2) 私は病気だ。: (　　) es iskyten.\br;
+    }
+    +p {
+      \indent;2. リパライン語に訳しましょう。\br;
+      1) 私は医者だ。: mi (　　) lankirler.　2) 彼女は教師か？: ci (　　) kantier?
+    }
+    +p {
+      2. ()内の単語を呼格にしましょう。\br;
+      1) mili, (felirca)?　　　　2) salarua, (sapper).　　　　3) jei, (co)!
+    }
+  >
+>

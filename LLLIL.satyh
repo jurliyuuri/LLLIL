@@ -1,0 +1,92 @@
+@require: base/length
+
+let-block ctx +frame bt =
+  let pads = (7pt, 7pt, 10pt, 10pt) in
+  let decoset = VDecoSet.simple-frame-stroke 1pt Color.black in
+  block-frame-breakable ctx pads decoset (fun ctx -> read-block ctx bt)
+
+let-block ctx +newpage = clear-page
+
+let-inline ctx \br = inline-fil ++ embed-block-breakable ctx (block-skip (get-natural-width (read-inline ctx {m})))
+
+let-inline ctx \textLatin it = 
+  let ctxLatin = 
+    ctx |> set-font Latin(`Junicode`, 1., 0.)
+  in
+  read-inline ctxLatin it
+
+let-inline ctx \textCyrillic it = 
+  let ctxCyrillic =
+    ctx |> set-font OtherScript(`segoeui`, 1., 0.)
+  in
+  read-inline ctxCyrillic it
+
+let-inline ctx \dash = 
+  read-inline ctx {\textLatin{—}}
+
+let-inline ctx \indent = 
+  inline-skip (get-font-size ctx *' 0.55)
+
+let-inline ctx \subsection-indent = 
+  inline-skip 15pt
+
+let-inline ctx \practiceQuestion number = 
+  let practiceQuestion = embed-string `練習問題` in
+  let text-color r g b = (RGB(r /. 255.0, g /. 255.0, b /. 255.0)) in
+  let new-ctx = 
+    ctx |> set-font Kana (`ipaexg`, 0.88, 0.)
+        |> set-font HanIdeographic (`ipaexg`, 0.88, 0.)
+        |> set-font-size 15pt
+        |> set-text-color (text-color 53.0 82.0 102.0)
+  in
+    read-inline new-ctx {\subsection-indent;#practiceQuestion;#number;\br;}
+
+let-inline ctx \wordsInThisLesson = 
+  let text-color r g b = (RGB(r /. 255.0, g /. 255.0, b /. 255.0)) in
+  let new-ctx = 
+    ctx |> set-font HanIdeographic (`ipaexg`, 0.88, 0.)
+        |> set-font-size 15pt
+        |> set-text-color (text-color 63.0 102.0 172.0)
+  in
+  read-inline new-ctx {\subsection-indent;この課の単語\br;}
+
+let-block +pQ number t = '<
+  +pn{
+    \practiceQuestion(number);
+    \br;
+    #t;
+  }
+>
+
+let-block +pW t = 
+  '<
+  +pn{
+    \wordsInThisLesson;
+    \br;
+    #t;
+  }
+>
+
+let-inline ctx \intonationLine it1 it2 tone = 
+  let (w1, h1, d1) = get-natural-metrics (read-inline ctx it1) in
+  let (w2, h2, d2) = get-natural-metrics (read-inline ctx it2) in
+  let hmax = Length.max h1 h2 in
+  let dmax = Length.max d1 d2 in
+  let deltaY = match tone with
+    | `up` -> hmax
+    | `down` -> -1pt *' (dmax /' 1pt)
+    | _ -> 0pt
+  in 
+  let thickness = 0.5pt in
+  let colour = Color.black in
+    inline-graphics (w1 +' w2) hmax dmax (fun (x, y) -> 
+      [
+        stroke thickness colour (
+          unite-path (
+            Gr.line (x, y +' 1pt *' ((hmax -' dmax) /' 2.0pt)) (x +' w1, y +' 1pt *' ((hmax -' dmax) /' 2.0pt))
+          ) (
+            Gr.line (x +' w1, y +' 1pt *' ((hmax -' dmax) /' 2.0pt)) (x +' w1 +' w2, y +' deltaY)
+          )
+        )
+      ]
+    )
