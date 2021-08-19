@@ -31,6 +31,8 @@ let-inline ctx \indent =
 let-inline ctx \subsection-indent = 
   inline-skip 15pt
 
+let-inline \sp = {　}  % 全角スペース
+
 let-inline ctx \practiceQuestion number = 
   let practiceQuestion = embed-string `練習問題` in
   let text-color r g b = (RGB(r /. 255.0, g /. 255.0, b /. 255.0)) in
