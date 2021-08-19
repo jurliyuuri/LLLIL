@@ -19,5 +19,5 @@
 - [ruby](https://github.com/puripuri2100/SATySFi-ruby)
 
 ### フォント
-- リパーシェ: cirlxarli_liparxe.ttf
+- リパーシェ: [cirlxarli_liparxe.ttf](https://drive.google.com/file/d/0B39blCYDRBu-M2pPQWx5UHk5YWs/view?resourcekey=0-MTlqm8MAO9CmCgj7AsHJ5w)
 - キリル: segoeui.ttf
