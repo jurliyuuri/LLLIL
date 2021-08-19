@@ -12,6 +12,7 @@ let-inline ctx \br = inline-fil ++ embed-block-breakable ctx (block-skip (get-na
 let-inline ctx \textLatin it = 
   let ctxLatin = 
     ctx |> set-font Latin(`Junicode`, 1., 0.)
+        |> set-font OtherScript(`Junicode`, 1., 0.)
   in
   read-inline ctxLatin it
 
