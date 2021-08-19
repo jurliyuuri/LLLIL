@@ -298,9 +298,9 @@ ExDesign.document (|
         \indent;no io elerna mol fal mi'd snutok.\br;
         \dash; xalijasti, metista fqa es mi'd kranteerl tirne?\br;
         \dash; cirla? \textLatin{……}nace, mi nix ly. \br;
-        \dash; als es niv. als'd larta nix.\br;
+        \dash; als es niv. als larta nix.\br;
         \dash; xace, elernasti.\br;
-        \dash; ja, lecu fix'onem manicoma.\br;
+        \dash; ja, lecu fix'onem manicoma etexy.\br;
         \dash; vynut!\br;
       }
     >
@@ -354,8 +354,9 @@ ExDesign.document (|
         | no\sp;今          | snutok\sp;部屋
         | metista\sp;たぶん | kranteerl\sp;本
         | tirne\sp;～かしら(女性用の疑問相位詞) | nix\sp;間違える
-        | ly\sp;～かもしれない(相位詞) | larta\sp;人
-        | fix'onem\sp;遊ぶ  | manicoma\sp;マニソマ(ラネーメの遊戯)
+        | ly\sp;～かもしれない(相位詞) | als\sp;すべての、あらゆる
+        | larta\sp;人       | fix'onem\sp;遊ぶ
+        | manicoma\sp;マニソマ(ラネーメの遊戯) | etexy\sp;～とか、など(後置詞)
         | sysnul\sp;今日    | fontles\sp;最初
         | dyjuk\sp;リンゴ   | makati\sp;マカティ(アイル共和国の首都)
         | kestine\sp;大学   | tilien\sp;終える、仕上げる
