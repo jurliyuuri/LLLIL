@@ -5,6 +5,7 @@
 @require: class-exdesign/exdesign
 @require: easytable/easytable
 @require: uline/uline
+@require: ruby/ruby
 @import: LLLIL
 @import: article-lip
 
@@ -23,7 +24,6 @@ ExDesign.document (|
   header-footer = ArticleLip.normalHF;
   fonts = ArticleLip.fonts;
 |) '<
-  +newpage;
   +subsection{はじめに} <
     +p {
       リパライン語を学ぼうとするみなさんに向けて、従来の教科書の項目から基本的な
@@ -68,7 +68,7 @@ ExDesign.document (|
     }
     +subsection{母音字} <
       +p {
-        リパライン語には i, y, u, o, e, a の６つの母音字が存在します。\br;
+        リパライン語には i, y, u, o, e, a の\textLatin{6}つの母音字が存在します。\br;
         \indent;i u o e a：対応するローマ字と同じように発音します。\br;
         \indent;y：舌を下あご側の前歯の裏につけながら、口をすぼめて[ウ]と発音します。\br;
       }
@@ -129,7 +129,7 @@ ExDesign.document (|
     >
     +subsection{三重子音} <
       +p {
-        Rkh は、ドイツ語やフランス語の r のようにのどを震わせるラ行の音です。
+        Rkh は、ドイツ語やフランス語の \textLatin{r} のようにのどを震わせるラ行の音です。
       }
     >
     +subsection{強弱子音と軟子音} <
@@ -137,19 +137,19 @@ ExDesign.document (|
         リパライン語の母音は強母音と弱母音の二つに分けられます。強母音は a, e, o の\textLatin{3}つで、弱子音は i, y, u の\textLatin{3}つです。また、軟子音というものも存在し、これは x, X, sh, ch の\textLatin{4}つを指します。
         \listing{
           * i の後に母音が来るとき、i は j の音になります。\br;
-          iulo [ユロ] 　 iavnav [ヤヴナヴ]
+          iulo [ユロ] \sp; iavnav [ヤヴナヴ]
           * y の後に母音が来た場合、y が口をすぼめた j の音になることがあります。\br;
-          etulyo [エトゥリュオ] 　 yuesleone [ユエスレオネ]
+          etulyo [エトゥリュオ] \sp; yuesleone [ユエスレオネ]
           * u の後に母音が来た場合、u が w の音になることがあります。\br;
-          tuan [トゥアン] 　 luo [ルォ]
+          tuan [トゥアン] \sp; luo [ルォ]
           * j の前後共に母音が来ない場合は、i で発音されます。\br;
-          arteldarlj [アーテルダーリ] 　 zpenernj[ツペネーニ]
+          arteldarlj [アーテルダーリ] \sp; zpenernj[ツペネーニ]
           * 母音の後に i, u が来て、(間に'が入っても良い)その後に r が来ない場合は j, w に変わって発音する場合があります。ただし、iu, yu の u は w の音にはなりません。\br;
-          lajnef [ライネフ] 　 paltau [パルタウ]
+          lajnef [ライネフ] \sp; paltau [パルタウ]
           * 軟子音のあとに i＋母音字が来ると i が発音されない場合があります。\br;
-          duxien [ドゥシェン] 　 pyshien [ピュシェン]
+          duxien [ドゥシェン] \sp; pyshien [ピュシェン]
           * 軟子音または j の後ろに来た y は u で発音されます。\br;
-          xyr [シュー] 　 ijyr [イユー]
+          xyr [シュー] \sp; ijyr [イユー]
         }
       }
     >
@@ -160,12 +160,12 @@ ExDesign.document (|
           * 'が弱母音の後ろにつくときは、その弱母音は半母音化せず分けて発音されます。\br;
           Kertni'ar [ケートニアー] ～ kertniar [ケートニャー]\br;
           fi'anxa [フィアンシャ] ～ fianxa [フャンシャ]
-          * sj の発音には、si と ci の２種類が認められています。ただし、直後に母音が来ないときは必ず si の発音となります。\br;
-          sjuelun [スュェルン/ズュェルン] 　 lursjR [ルーズィル]
+          * sj の発音には、si と ci の二種類が認められています。ただし、直後に母音が来ないときは必ず si の発音となります。\br;
+          sjuelun [スュェルン/ズュェルン] \sp; lursjR [ルーズィル]
           * tz, sx, dX, tth, ddh は z, x, X, th, dh の促音で読みます。\br;
-          josxe [ヨッシェ] 　 anfeyatz [アンフェヤッツ]
+          josxe [ヨッシェ] \sp; anfeyatz [アンフェヤッツ]
           * ただし、cx は xの促音ではありません。\br;
-          licxa [リスシャ] 　 -bacx [バスシュ]
+          licxa [リスシャ] \sp; -bacx [バスシュ]
         }
       }
     >
@@ -174,11 +174,11 @@ ExDesign.document (|
         リパライン語のアクセントは一般には英語と同じ強弱アクセントとされており、
         \listing{
           * 単語に音節が一つだけのとき: その母音
-          * 単語に音節が二つ以上あり長母音がないとき: 後ろから２つ目の母音
+          * 単語に音節が二つ以上あり長母音がないとき: 後ろから二つ目の母音
           * 単語に長母音があるとき: 最初の長母音
         }
         にアクセントが置かれることとなっています。\br;
-        \indent;niv [\uline{ニ}ヴ] 　 cene [\uline{セ}ネ] 　 lineparine [リネ\uline{パー}イネ]
+        \indent;niv [\uline{ニ}ヴ] \sp; cene [\uline{セ}ネ] \sp; lineparine [リネ\uline{パー}イネ]
       }
     >
     +subsection{イントネーション} <
@@ -221,8 +221,8 @@ ExDesign.document (|
     >
     +subsection{人称代名詞} <
       +p {
-        人称の違いを表す代名詞です。一人称は話し手、二人称は聞き手、３人称は会話に
-        参加していない人やものを指します。４人称はリパライン語においては「全て」や「みんな」を表します。
+        人称の違いを表す代名詞です。一人称は話し手、二人称は聞き手、三人称は会話に
+        参加していない人やものを指します。四人称はリパライン語においては「全て」や「みんな」を表します。
         物称は直称代名詞とも呼ばれ、直接指さしすることができるものや場所に使います。
         文脈で使う「それ」や「あれ」は文脈指示を用います。\br;
         \easytable?:[] [cw 160pt;]{|
@@ -237,8 +237,8 @@ ExDesign.document (|
         |}
 
         \listing{
-          * ２人称は、通常は co が用いられます。相手が話を聞いていないと思われる場合や、改まって相手に敬意を表す場合には zi を使います。
-          * ３人称の si, ci, ni はそれぞれ「彼」「彼女」「(性別を指定しない)その人」に対応します。
+          * 二人称は、通常は co が用いられます。相手が話を聞いていないと思われる場合や、改まって相手に敬意を表す場合には zi を使います。
+          * 三人称の si, ci, ni はそれぞれ「彼」「彼女」「(性別を指定しない)その人」に対応します。
           * 物称の fqa, fgir はそれぞれ「これ、それ」「あれ」に対応します。距離が近ければ fqa を、遠ければ fgir を使います。
           * 文脈指示の la lex はリパライン語の主要な特徴の一つともいえる代名詞で、話し言葉書き言葉ともに非常によく用いられる表現です。
           例えば「卵焼き作れる？」「ううん、あれ難しいよね」の「あれ」などは話の中に出てきたものなので fqa, fgir ではなく la lex で受けます。
@@ -250,60 +250,157 @@ ExDesign.document (|
       +p {
         コピュラ動詞というのは英語の \textLatin{be} 動詞にあたるもので、\textLatin{A} es \textLatin{B}.で「\textLatin{A} は \textLatin{B} である」という文を作ることができます。
         \textLatin{B} には形容詞や名詞が入ることができます。\br;
-        \indent;co es xorlnem.　君は美しい。　si es vefisaiter.　彼はヴェフィス人だ。
+        \indent;co es xorlnem.\sp;君は美しい。\sp;si es vefisaiter.\sp;彼はヴェフィス人だ。
       }
     >
     +subsection{呼格} <
       +p {
         リパライン語で何かに呼びかけるときは、名詞を呼格に変えて呼びます。呼格は名詞の後ろに呼格語尾-sti をつけて作ります。\br;
-        \indent;xalija　シャリヤ(女性の名前) ～ xalijasti　シャリヤよ
+        \indent;xalija\sp;シャリヤ(人名) ～ xalijasti\sp;シャリヤよ
       }
     >
     +subsection{平叙疑問文} <
       +p {
         「はい」「いいえ」で答えられる質問を平叙疑問文といいます。質問に対して肯定するときは ja を、否定するときは niv を用います。\br;
-        \indent;fqa es cirla? \dash; niv, fqa es nisa.　これは本当か？\dash;いいえ、誤りです。
+        \indent;fqa es cirla? \dash; niv, fqa es nisa.\sp;これは本当か？\dash;いいえ、誤りです。
       }
     >
     +subsection{挨拶表現} <
       +p {
         比較的頻繁に用いられる表現の例を以下に挙げます。
         \listing{
-          * salarua.　こんにちは
-          * xace.　ありがとう
-          * nace.　ごめんなさい
-          * als es niv.　どういたしまして
-          * fasta la pesta.　また後で
-          * liqka'l tydiest.　おやすみなさい
+          * salarua.\sp;こんにちは
+          * xace.\sp;ありがとう
+          * nace.\sp;ごめんなさい
+          * als es niv.\sp;どういたしまして
+          * fasta la pesta.\sp;また後で
+          * liqka'l tydiest.\sp;おやすみなさい
         }\br;
         \indent;このうち、最もよく使われるのが salarua で、昼夜を問わず使えるほか出会った時にも別れる時にも使うことができます。
-        親しい間柄ではくだけた言い方であるsalar もよく用いられます。より丁寧にしたい場合は表現の後に lu を言うとよいでしょう。
+        親しい間柄ではくだけた言い方である salar もよく用いられます。より丁寧にしたい場合は表現の後に lu を言うとよいでしょう。
       }
     >
     +pW {
       \easytable ?:[] [lw 200pt; lw 200pt] {
-        | xalija　シャリヤ(女性の名前) | lipalain　リパラオネ人
-        | elerna　エレーナ(女性の名前) | mena　友人
-        | vynut　良い、大丈夫だ        | xorlnem　美しい
-        | vefisaiter　ヴェフィス人     | cirla　真実
-        | nisa　嘘、誤り               | 
+        | xalija\sp;シャリヤ(人名)   | lipalain\sp;リパラオネ人
+        | elerna\sp;エレーナ(人名)   | mena\sp;友人
+        | vynut\sp;良い、大丈夫だ    | xorlnem\sp;美しい
+        | vefisaiter\sp;ヴェフィス人 | cirla\sp;真実
+        | nisa\sp;嘘、誤り           | 
+      |}
+    }
+    +newpage;
+  >
+
+  +section{第\textLatin{2}課\ -2te laesnifo-}<
+    +frame <
+      +pn {
+        \indent;no io elerna mol fal mi'd snutok.\br;
+        \dash; xalijasti, metista fqa es mi'd kranteerl tirne?\br;
+        \dash; cirla? \textLatin{……}nace, mi nix ly. \br;
+        \dash; als es niv. als'd larta nix.\br;
+        \dash; xace, elernasti.\br;
+        \dash; ja, lecu fix'onem manicoma.\br;
+        \dash; vynut!\br;
+      }
+    >
+    +subsection{fal, io} <
+      +p {
+        この二つの単語は、名詞の前後に置かれることで《場所》や《時間》などを表します。
+        他にも《方法》や《対象》を表すこともあるなど示す意味が非常に広い表現なので、文脈から適切に訳しましょう。\br;
+        \indent;fal が前置詞で、io が後置詞です。一般的な現代リパライン語においては、
+        動詞の前では後置詞が、動詞の後では前置詞が用いられやすい傾向にあります。\br;
+        \indent;fal sysnul \sp; 今日に \sp; fgir io \sp; あそこで \sp; fal fontles \sp; 最初に
+      }
+    >
+    +subsection{存在動詞 mol} <
+      +p {
+        存在動詞とは「～がある/～にある」を意味する動詞です。単独でも用いられるほか、次に述べる fal/io と合わせることも非常に頻繁に行われます。\br;
+        \indent;es のようにコピュラとして使うことは出来ず、また es を存在動詞として使うこともできません。
+        これらの使い分けはリパライン語に慣れないうちは間違えやすいので注意しましょう。\br;
+        \indent;dijyk mol fal fqa.\sp;ここにリンゴがあります。\br;
+        \indent;si mol fal makati'd kestene\sp;彼は\ruby ?:[Ruby.mode Ruby.g] [`まかてぃ`] {|天|神|}大学に在学している。
+      }
+    >
+    +subsection{相位詞} <
+      +p {
+        リパライン語には相位詞という品詞があり、主に文末に置かれることで文に細かなニュアンスを加えることができます。
+        今は使われなくなったものや新しく生まれたものなど非常に多く存在し、よく見られるものには、
+        丁寧さを表す lu、推測や伝聞を表すly、同意を求める lys、依頼を示す plax などがあります。\br;
+        \indent;zi tilien xei lu?\sp;チェックインはお済みでしょうか？\br;
+        \indent;amcol snierur do!\sp;飯を寄こせ！
+      }
+    >
+    +subsection{属格} <
+      +p {
+        名詞に -'d をつけることで、「～の」という意味を表すことができます。\br;
+        \indent;mi'd ferlk es felirca.\sp;私の名前はフェリーサです。\br;
+        \indent;fqa'd oniex es vynut.\sp;このパンはおいしい。
+      }
+      +p {
+        数や地名も、そのままつなげるのではなく属格で修飾することで表現します。\br;
+        \indent;ci mol fal 4'd desal.\sp;彼女は\textLatin{4}階にいる。\br;
+        \indent;fqa io yuesleone'd fankas.\sp;ユエスレオネ連邦はここにある。
+      }
+    >
+    +subsection{勧誘の助動詞 lecu} <
+      +p {
+        lecu を文頭に置くことで「～しよう」と誘う意味を表すことができます。上の例文でエレーナが言っているように主語を省くことも可能です。\br;
+        \indent;lecu miss knloan nostus.\sp;(私たちは)昼ごはんを食べよう。
+      }
+    >
+    +pW {
+      \easytable ?:[] [lw 200pt; lw 200pt] {
+        | no\sp;今          | snutok\sp;部屋
+        | metista\sp;たぶん | kranteerl\sp;本
+        | tirne\sp;～かしら(女性用の疑問相位詞) | nix\sp;間違える
+        | ly\sp;～かもしれない(相位詞) | larta\sp;人
+        | fix'onem\sp;遊ぶ  | manicoma\sp;マニソマ(ラネーメの遊戯)
+        | sysnul\sp;今日    | fontles\sp;最初
+        | dyjuk\sp;リンゴ   | makati\sp;マカティ(アイル共和国の首都)
+        | kestine\sp;大学   | tilien\sp;終える、仕上げる
+        | xei\sp;ログイン、チェックイン | amcol\sp;渡す
+        | snierur\sp;食事   | do\sp;男性用の相位詞
+        | felirca\sp;フェリーサ(人名) | oniex\sp;パン
+        | desal\sp;階、フロア | yuesleone\sp;ユエスレオネ
+        | fankas\sp;連邦    | knloan\sp;食べる、飲む
+        | nostus\sp;昼食    |
       |}
     }
     +newpage;
   >
 
   +section{練習問題} <
-      +pQ {1}{
-      \indent;1. リパライン語に訳しましょう。\br;
-      1) 彼は学生だ。: (　　) es kestine'a.　2) 私は病気だ。: (　　) es iskyten.\br;
+    +pQ {1}{
+      \indent;\indent;1. リパライン語に訳しましょう。\br;
+      1) 彼は学生だ。: (\sp;\sp;) es kestine'a.\sp;2) 私は病気だ。: (\sp;\sp;) es iskyten.\br;
     }
     +p {
       \indent;2. リパライン語に訳しましょう。\br;
-      1) 私は医者だ。: mi (　　) lankirler.　2) 彼女は教師か？: ci (　　) kantier?
+      1) 私は医者だ。: mi (\sp;\sp;) lankirler.\sp;2) 彼女は教師か？: ci (\sp;\sp;) kantier?
     }
     +p {
-      2. ()内の単語を呼格にしましょう。\br;
-      1) mili, (felirca)?　　　　2) salarua, (sapper).　　　　3) jei, (co)!
+      \indent;3. ()内の単語を呼格にしましょう。\br;
+      1) mili, (felirca)?\sp;\sp;\sp;\sp;2) salarua, (sapper).\sp;\sp;\sp;\sp;3) jei, (co)!
+    }
+    +pQ {2}{
+      \indent;\indent;1. かっこ内の単語を使ってリパライン語に訳しましょう。\br;
+      1) あそこに誰かいます。：(mol, fgir, Fasfa, fal)\br;
+      2) 彼は今家にいる。：(io, dystis, no, fal, si)\br;
+      3) 川の中に石がある。：(ezost, toxa, mol, fal)\br;
+      4) 冬にはここは寒くなる。：(vyrle, xilnar, is, fal, fqa)
+    }
+    +p {
+      \indent;2. かっこ内の単語を使って(必要な時は活用させて)、リパライン語に訳しましょう。\br;
+      1) 彼女は \textLatin{16} 歳です。：(es, 16, ci, larva)\br;
+      2) 私はパンを二つ持っている。：(mi, qa, letix, oniex)\br;
+      3) \textLatin{100} レジュ紙幣が三枚ある。：(letix, 3, leX, mi, jexerRt, 100)
+    }
+    +p {
+      \indent;3. かっこ内の単語を使って(必要な時は活用させて)、リパライン語に訳しましょう。\br;
+      1) ユーゴック語の本を読もう。：(akranti, akRantierl, yrgokk, lecu)\br;
+      2) この人を探そう。：(larta, melfert, lecu, fqa)\br;
+      3) 家で寝よう。：(lecu, dystis, sulaun, fal)
     }
   >
 >
