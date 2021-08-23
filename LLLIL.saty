@@ -338,7 +338,7 @@ ExDesign.document (|
         \indent;fqa'd oniex es vynut.\sp;このパンはおいしい。
       }
       +p {
-        数や地名も、そのままつなげるのではなく属格で修飾することで表現します。\br;
+        数や地名も、そのままつなげるのではなく属格で修飾することで表現します。修飾する属格名詞は英語や日本語と同じように、修飾される名詞の前につけます。\br;
         \indent;ci mol fal 4'd desal.\sp;彼女は\textLatin{4}階にいる。\br;
         \indent;fqa io yuesleone'd fankas.\sp;ユエスレオネ連邦はここにある。
       }
@@ -371,6 +371,91 @@ ExDesign.document (|
     +newpage;
   >
 
+  +section{第\textLatin{3}課\ -3te laesnifo-} <
+    +frame<
+      +p {
+        \dash; salarua, xalijasti!\br;
+        \indent;\dash; ar, cenesti. salarua.\br;
+        \indent;\indent;si es jazugasaki.cen. si es waxundeener.\br;
+        \indent;\dash; harmie co letix?\br;
+        \indent;\dash; fqasti? fqass es banerdex. co nili baneart?\br;
+        \indent;\dash; niv, mi lirf la lex!\br;
+        \indent;\dash; firlex, mi jujojes la lex ad bal.\br;
+        \indent;\dash; xace!\br;
+      }
+    >
+    +subsection{緩衝音} <
+      +p {
+        これまで呼格辞 -sti や属格接辞 -'d で行ってきたように、リパライン語では単語に接辞を付ける作業が欠かせません。
+        このとき、母音どうしが連続したり子音が連続したりすることがあります。\br;
+        \indent;例えば、dijyk に属格辞 -'d をそのまま付けると dijyk'd になりますが、子音である k と d が連続するため、
+        緩衝母音 -u- を \textLatin{2} つの間に入れることがあります (\uline{必須ではありません}) 。この緩衝音は、後述するクラスによって決定されます。
+      }
+    >
+    +subsection{クラス} <
+      +p {
+        クラスは、単語の緩衝音を決定するための概念です。\br;\br;
+        \easytable [cw 90pt; cw 90pt; cw 90pt; cw 90pt;]{
+          | 最終音節の母音 | クラス名 | 緩衝母音 | 緩衝子音
+          | a(r), o(r)    | 紅クラス | -a-      | -v-
+          | i(r), e(r)    | 蒼クラス | -e-      | -rg-
+          | u(r)          | 烏クラス | -u-      | -m-
+          | y(r)          | 葵クラス | -i-      | -l-
+        |}\br;\br;
+        \indent;クラスは語形で機械的に決まります。例えば lyjot であれば最終音節は -jot であり、その母音は o のため、
+        lyjot は紅クラスの単語となります。同様に、lineparine は蒼クラス、liestu は烏クラス、nyey は葵クラスとなります。
+      }
+      +p {
+        緩衝音は、リパライン語を理解するうえで最も重要になってくる要素の一つです。リパライン語では
+        様々な接辞で派生語が作られますが、緩衝音の存在を頭に留めておかなければ語素に正しく分解することができません。
+        まずは、数が多く出現頻度の高い紅クラスと蒼クラスから覚えるとよいでしょう。
+      }
+    >
+    +subsection{接尾辞 -ss} <
+      +p {
+        リパライン語の名詞は単数と複数を区別しませんが、接尾辞 -ss を付けることで多数性を明示することができます。\br;
+        \indent;litarlenerfe kidestess josnyn.\sp;無数の虫がわく。
+      }
+    >
+    +subsection{接続詞 ad, adit} <
+      +p {
+        \textLatin{2} つのものの並列を表すときには ad を、\textLatin{3} つ以上のときは adit を使います。\br;
+        \indent;mi xlais lersene ad kutyv.\sp;私はお菓子とコーヒーを注文する。\br;
+        \indent;stafiort io mol jynut adit tox, tydiv.\sp;箱の中には本とペンと紙がある。
+      }
+    >
+    +subsection{疑問詞を使った疑問文} <
+      +p {
+        リパライン語にも、「何」や「どこ」をたずねる疑問詞が存在します。\br;\br;
+        \easytable ?:[t; b;] [lw 110pt; lw 110pt; lw 110pt;] {
+          | harmie\sp;何 | harmoe\sp;いつ | harmue\sp;どこ
+          | harmae\sp;誰 | harmy\sp;なぜ　| hame\sp;どのような
+        |}\br;\br;
+        \indent;疑問詞は文頭に置かれ、その後はたずねたいところを抜いて文を続けます。\br;
+        \indent;harmy co mol fal fgir?\sp;なぜ君はあそこにいたの？\br;
+        \indent;harmoe si sulaun?\sp;彼はいつ寝ているの？
+      }
+    >
+    +pW {
+      \easytable ?:[] [lw 200pt; lw 200pt] {
+        | ar\sp;ああ(間投詞)      | cen\sp;\ruby ?:[Ruby.mode Ruby.m] [`せん`] {|翠|}(人名)
+        | waxundeener\sp;異世界人 | letix\sp;持つ
+        | banerdex\sp;どんぐり    | nili\sp;嫌う
+        | baneart\sp;バネアート(お菓子の一種) | lirf\sp;好む、愛する
+        | firlex\sp;理解する      | firlex,\sp;なるほど(間投詞)
+        | jujojes\sp;料理する     | bal\sp;お茶
+        | lyjot\sp;文字           | lineparine\sp;リパライン語
+        | liestu\sp;時間          | nyey\sp;小説
+        | litarlenerfe\sp;無数の  | kidest\sp;虫
+        | xlais\sp;注文する、命令する | lersene\sp;お菓子
+        | kutyv\sp;コーヒー       | stafiort\sp;箱
+        | jynut\sp;本、書籍       | tox\sp;ペン
+        | tydiv\sp;紙             | sulaun\sp;寝る
+      |}
+    }
+    +newpage;
+  >
+
   +section{練習問題} <
     +pQ {1}{
       \indent;\indent;1. リパライン語に訳しましょう。\br;
@@ -384,6 +469,7 @@ ExDesign.document (|
       \indent;3. ()内の単語を呼格にしましょう。\br;
       1) mili, (felirca)?\sp;\sp;\sp;\sp;2) salarua, (sapper).\sp;\sp;\sp;\sp;3) jei, (co)!
     }
+
     +pQ {2}{
       \indent;\indent;1. かっこ内の単語を使ってリパライン語に訳しましょう。\br;
       1) あそこに誰かいます。：(mol, fgir, Fasfa, fal)\br;
@@ -402,6 +488,13 @@ ExDesign.document (|
       1) ユーゴック語の本を読もう。：(akranti, akRantierl, yrgokk, lecu)\br;
       2) この人を探そう。：(larta, melfert, lecu, fqa)\br;
       3) 家で寝よう。：(lecu, dystis, sulaun, fal)
+    }
+
+    +pQ {3}{
+      \indent;\indent;かっこ内の単語を使って(必要な時は活用させて)、リパライン語に訳しましょう。\br;
+      1) 人々はなぜ生きるの？：(niejod, harmy, larta) ?\br;
+      2) 彼女はいつここに来ますか？：(ci, fal, klie, harmoe, fqa) ?\br;
+      3) あなたは今どこで何をしていますか？：(co, harmue, fal, harmie, es, no) ?
     }
   >
 >
